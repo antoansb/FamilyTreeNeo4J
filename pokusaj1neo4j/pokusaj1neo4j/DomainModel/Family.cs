@@ -11,5 +11,7 @@ namespace pokusaj1neo4j.DomainModel
         public String familyName { get; set; }
         public List<familyMember> familyMembers { get; set; }
         public int numberOfMembers { get; set; }
+        public String usernameOfFamilly { get; set; }
+        public String password { get; set; }
     }
 }
