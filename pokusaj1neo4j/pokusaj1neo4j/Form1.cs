@@ -15,20 +15,25 @@ namespace pokusaj1neo4j
 {
     public partial class Form1 : Form
     {
-        private GraphClient client;
-        public Form1()
+        public GraphClient client;
+        public familyMember globalMember;
+        public Family globalFamily;
+
+        public Form1(Family fname)
         {
             InitializeComponent();
-            
-            client = new GraphClient(new Uri("http://localhost:7474/db/data"), "neo4j", "blizanci");
-            try
-            {
-                client.Connect();
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
+            lblFamily.Text = "Porodica " + fname.familyName + ", dobrodosli!";
+            globalFamily = fname;
+#region comm
+            /* client = new GraphClient(new Uri("http://localhost:7474/db/data"), "neo4j", "blizanci");
+             try
+             {
+                 client.Connect();
+             }
+             catch (Exception exc)
+             {
+                 MessageBox.Show(exc.Message);
+             }*/
 
             /* Dictionary<string, object> queryDict = new Dictionary<string, object>();
              /*queryDict.Add("name", "22");
@@ -53,15 +58,67 @@ namespace pokusaj1neo4j
  "RETURN type(r)",
                  queryDict, CypherResultMode.Set);
              ((IRawGraphClient)client).ExecuteCypher(query2);*/
-
-            
+#endregion
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            AddRelation relation = new AddRelation();
+            AddRelation relation = new AddRelation(globalMember, globalFamily);
             relation.client = client;
             relation.ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            #region visible
+            lblOtherName.Visible = true;
+            lblotherSurname.Visible = true;
+            txtOtherPersonName.Visible = true;
+            txtOtherPersonSurname.Visible = true;
+            btnRelate.Enabled = true;
+            #endregion
+
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            var query2 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) where n.name = '" + txtName.Text + "' AND n.surname = '" + txtSurname.Text + "' return n",
+                 queryDict, CypherResultMode.Set);
+            
+            List<familyMember> novi = ((IRawGraphClient)client).ExecuteGetCypherResults<familyMember>(query2).ToList();
+            foreach( familyMember f in novi )
+            {
+                globalMember = f;
+                MessageBox.Show(globalMember.name);
+                
+            }
+            if(globalMember==null)
+            {
+                MessageBox.Show("Osoba nije pronadjena!");
+            }
+            else
+            btnDodaj.Enabled = true;
+        }
+
+        private void btnNewMember_Click(object sender, EventArgs e)
+        {
+            addFamilyMember newMember = new addFamilyMember(null, null, globalFamily);
+            newMember.client = client;
+            newMember.ShowDialog();
+        }
+
+        private void btnRelate_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            var query2 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) where n.name = '" + txtOtherPersonName.Text + "' AND n.surname = '" + txtOtherPersonSurname.Text + "' return n",
+                 queryDict, CypherResultMode.Set);
+
+            familyMember novi = ((IRawGraphClient)client).ExecuteGetCypherResults<familyMember>(query2).FirstOrDefault();
+
+            var query3 = new Neo4jClient.Cypher.CypherQuery("MATCH(a: familyMember),(b: familyMember)" +
+                                                            "WHERE a.name = '"+ this.globalMember.name +"' AND a.surname='"+this.globalMember.surname+"' AND b.name = '"+novi.name+"' AND b.surname='"+novi.surname+"' " +
+                                                            "CREATE(a) < -[r: SUPRUZNIK] - (b)" +
+                                                            "RETURN type(r)",
+                 queryDict, CypherResultMode.Set);
+            ((IRawGraphClient)client).ExecuteCypher(query3);
+
         }
     }
 }

@@ -16,10 +16,14 @@ namespace pokusaj1neo4j
     public partial class AddRelation : Form
     {
         public GraphClient client;
+        public familyMember globalMember;
+        public Family globalFamily;
 
-        public AddRelation()
+        public AddRelation(familyMember global, Family familyGlobal)
         {
             InitializeComponent();
+            this.globalMember = global;
+            this.globalFamily = familyGlobal;
         }
 
         private void AddRelation_Load(object sender, EventArgs e)
@@ -30,7 +34,7 @@ namespace pokusaj1neo4j
         private void btnSpouse_Click(object sender, EventArgs e)
         {
             String relative = btnSpouse.Text;
-            addFamilyMember nova = new addFamilyMember(relative);
+            addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
             nova.client = client;
             nova.ShowDialog();
         }
@@ -38,7 +42,47 @@ namespace pokusaj1neo4j
         private void btnBrother_Click(object sender, EventArgs e)
         {
             String relative = btnBrother.Text;
-            addFamilyMember nova = new addFamilyMember(relative);
+            addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
+            nova.client = client;
+            nova.ShowDialog();
+        }
+
+        private void btnSister_Click(object sender, EventArgs e)
+        {
+            String relative = btnSister.Text;
+            addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
+            nova.client = client;
+            nova.ShowDialog();
+        }
+
+        private void btnFather_Click(object sender, EventArgs e)
+        {
+            String relative = btnFather.Text;
+            addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
+            nova.client = client;
+            nova.ShowDialog();
+        }
+
+        private void btnMother_Click(object sender, EventArgs e)
+        {
+            String relative = btnMother.Text;
+            addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
+            nova.client = client;
+            nova.ShowDialog();
+        }
+
+        private void btnSon_Click(object sender, EventArgs e)
+        {
+            String relative = btnSon.Text;
+            addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
+            nova.client = client;
+            nova.ShowDialog();
+        }
+
+        private void btnDauther_Click(object sender, EventArgs e)
+        {
+            String relative = btnDauther.Text;
+            addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
             nova.client = client;
             nova.ShowDialog();
         }

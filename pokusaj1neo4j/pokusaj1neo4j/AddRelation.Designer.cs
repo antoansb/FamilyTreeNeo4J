@@ -55,6 +55,7 @@
             this.btnFather.TabIndex = 2;
             this.btnFather.Text = "OTAC";
             this.btnFather.UseVisualStyleBackColor = true;
+            this.btnFather.Click += new System.EventHandler(this.btnFather_Click);
             // 
             // btnMother
             // 
@@ -64,6 +65,7 @@
             this.btnMother.TabIndex = 3;
             this.btnMother.Text = "MAJKA";
             this.btnMother.UseVisualStyleBackColor = true;
+            this.btnMother.Click += new System.EventHandler(this.btnMother_Click);
             // 
             // btnSon
             // 
@@ -73,6 +75,7 @@
             this.btnSon.TabIndex = 4;
             this.btnSon.Text = "SIN";
             this.btnSon.UseVisualStyleBackColor = true;
+            this.btnSon.Click += new System.EventHandler(this.btnSon_Click);
             // 
             // btnDauther
             // 
@@ -82,6 +85,7 @@
             this.btnDauther.TabIndex = 5;
             this.btnDauther.Text = "CERKA";
             this.btnDauther.UseVisualStyleBackColor = true;
+            this.btnDauther.Click += new System.EventHandler(this.btnDauther_Click);
             // 
             // btnSpouse
             // 
@@ -101,6 +105,7 @@
             this.btnSister.TabIndex = 7;
             this.btnSister.Text = "SESTRA";
             this.btnSister.UseVisualStyleBackColor = true;
+            this.btnSister.Click += new System.EventHandler(this.btnSister_Click);
             // 
             // AddRelation
             // 

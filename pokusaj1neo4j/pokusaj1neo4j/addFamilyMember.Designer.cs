@@ -174,6 +174,7 @@
             this.labelForNewMember.Size = new System.Drawing.Size(150, 22);
             this.labelForNewMember.TabIndex = 15;
             this.labelForNewMember.Text = "Clan porodice je";
+            this.labelForNewMember.Visible = false;
             // 
             // radioMale
             // 
