@@ -33,7 +33,7 @@ namespace pokusaj1neo4j
 
         private void btnSpouse_Click(object sender, EventArgs e)
         {
-            String relative = btnSpouse.Text;
+            String relative = "SUPRUZNIK";
             addFamilyMember nova = new addFamilyMember(relative, globalMember, globalFamily);
             nova.client = client;
             nova.ShowDialog();

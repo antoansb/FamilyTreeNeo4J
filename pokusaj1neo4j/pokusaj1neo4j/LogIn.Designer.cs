@@ -47,43 +47,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 65);
+            this.label1.Location = new System.Drawing.Point(40, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.label1.Text = "E-adresa:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 118);
+            this.label2.Location = new System.Drawing.Point(40, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            this.label2.Text = "Lozinka:";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(194, 64);
+            this.txtUsername.Location = new System.Drawing.Point(165, 66);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 22);
+            this.txtUsername.Size = new System.Drawing.Size(129, 22);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(194, 115);
+            this.txtPassword.Location = new System.Drawing.Point(165, 115);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.Size = new System.Drawing.Size(129, 22);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(203, 185);
+            this.btnLogIn.Location = new System.Drawing.Point(182, 168);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 34);
+            this.btnLogIn.Size = new System.Drawing.Size(91, 36);
             this.btnLogIn.TabIndex = 4;
-            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.Text = "Prijavite se:";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
@@ -92,15 +92,15 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(63, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Family Name:";
+            this.label3.Text = "Porodicno prezime:";
             // 
             // txtFamilyName
             // 
             this.txtFamilyName.Location = new System.Drawing.Point(198, 40);
             this.txtFamilyName.Name = "txtFamilyName";
-            this.txtFamilyName.Size = new System.Drawing.Size(100, 22);
+            this.txtFamilyName.Size = new System.Drawing.Size(156, 22);
             this.txtFamilyName.TabIndex = 6;
             // 
             // txtNewPassword
@@ -108,14 +108,14 @@
             this.txtNewPassword.Location = new System.Drawing.Point(198, 139);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtNewPassword.Size = new System.Drawing.Size(156, 22);
             this.txtNewPassword.TabIndex = 10;
             // 
             // txtNewUsername
             // 
             this.txtNewUsername.Location = new System.Drawing.Point(198, 86);
             this.txtNewUsername.Name = "txtNewUsername";
-            this.txtNewUsername.Size = new System.Drawing.Size(100, 22);
+            this.txtNewUsername.Size = new System.Drawing.Size(156, 22);
             this.txtNewUsername.TabIndex = 9;
             // 
             // label4
@@ -123,26 +123,26 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(63, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 17);
+            this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Set new password:";
+            this.label4.Text = "Postavi lozinku:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(63, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 17);
+            this.label5.Size = new System.Drawing.Size(120, 17);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Set new username:";
+            this.label5.Text = "Postavi E-adresu:";
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(127, 197);
+            this.btnRegister.Location = new System.Drawing.Point(217, 201);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(80, 31);
+            this.btnRegister.Size = new System.Drawing.Size(117, 37);
             this.btnRegister.TabIndex = 11;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "Registrujte se";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -157,10 +157,10 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(386, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 272);
+            this.groupBox1.Size = new System.Drawing.Size(393, 272);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "REGISTER NOW";
+            this.groupBox1.Text = "NAPRAVITE NOVI NALOG";
             // 
             // LogIn
             // 
@@ -174,7 +174,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LogIn";
-            this.Text = "LogIn";
+            this.Text = "Porodicno stablo - prijavite se";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

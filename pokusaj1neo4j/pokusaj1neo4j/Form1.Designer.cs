@@ -41,6 +41,9 @@
             this.lblotherSurname = new System.Windows.Forms.Label();
             this.txtOtherPersonName = new System.Windows.Forms.TextBox();
             this.txtOtherPersonSurname = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnShowList = new System.Windows.Forms.Button();
+            this.btnShowFamily = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDodaj
@@ -89,7 +92,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(536, 194);
+            this.btnSearch.Location = new System.Drawing.Point(536, 119);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(139, 69);
             this.btnSearch.TabIndex = 7;
@@ -99,7 +102,7 @@
             // 
             // btnNewMember
             // 
-            this.btnNewMember.Location = new System.Drawing.Point(536, 49);
+            this.btnNewMember.Location = new System.Drawing.Point(536, 32);
             this.btnNewMember.Name = "btnNewMember";
             this.btnNewMember.Size = new System.Drawing.Size(139, 69);
             this.btnNewMember.TabIndex = 8;
@@ -121,7 +124,7 @@
             // btnRelate
             // 
             this.btnRelate.Enabled = false;
-            this.btnRelate.Location = new System.Drawing.Point(308, 308);
+            this.btnRelate.Location = new System.Drawing.Point(202, 308);
             this.btnRelate.Name = "btnRelate";
             this.btnRelate.Size = new System.Drawing.Size(139, 69);
             this.btnRelate.TabIndex = 9;
@@ -166,11 +169,47 @@
             this.txtOtherPersonSurname.TabIndex = 4;
             this.txtOtherPersonSurname.Visible = false;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(365, 308);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(140, 69);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "OBRISI CLANA PORODICE";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnShowList
+            // 
+            this.btnShowList.Enabled = false;
+            this.btnShowList.Location = new System.Drawing.Point(536, 212);
+            this.btnShowList.Name = "btnShowList";
+            this.btnShowList.Size = new System.Drawing.Size(139, 69);
+            this.btnShowList.TabIndex = 14;
+            this.btnShowList.Text = "VIDI INFORMACIJE";
+            this.btnShowList.UseVisualStyleBackColor = true;
+            this.btnShowList.Click += new System.EventHandler(this.btnShowList_Click);
+            // 
+            // btnShowFamily
+            // 
+            this.btnShowFamily.Enabled = false;
+            this.btnShowFamily.Location = new System.Drawing.Point(536, 308);
+            this.btnShowFamily.Name = "btnShowFamily";
+            this.btnShowFamily.Size = new System.Drawing.Size(139, 69);
+            this.btnShowFamily.TabIndex = 15;
+            this.btnShowFamily.Text = "VIDI PORODICU";
+            this.btnShowFamily.UseVisualStyleBackColor = true;
+            this.btnShowFamily.Click += new System.EventHandler(this.btnShowFamily_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 408);
+            this.Controls.Add(this.btnShowFamily);
+            this.Controls.Add(this.btnShowList);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblOtherName);
             this.Controls.Add(this.lblotherSurname);
             this.Controls.Add(this.txtOtherPersonName);
@@ -185,7 +224,7 @@
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.btnDodaj);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Porodicno stablo";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +245,9 @@
         private System.Windows.Forms.Label lblotherSurname;
         private System.Windows.Forms.TextBox txtOtherPersonName;
         private System.Windows.Forms.TextBox txtOtherPersonSurname;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnShowList;
+        private System.Windows.Forms.Button btnShowFamily;
     }
 }
 

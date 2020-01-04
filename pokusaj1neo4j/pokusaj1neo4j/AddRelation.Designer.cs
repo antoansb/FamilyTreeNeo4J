@@ -120,7 +120,7 @@
             this.Controls.Add(this.btnFather);
             this.Controls.Add(this.btnBrother);
             this.Name = "AddRelation";
-            this.Text = "AddRelation";
+            this.Text = "Dodaj srodstvo";
             this.Load += new System.EventHandler(this.AddRelation_Load);
             this.ResumeLayout(false);
 

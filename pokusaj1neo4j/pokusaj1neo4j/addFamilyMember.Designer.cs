@@ -152,14 +152,14 @@
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(251, 22);
-            this.dateTimePicker.TabIndex = 12;
+            this.dateTimePicker.TabIndex = 14;
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(27, 504);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 41);
-            this.btnAdd.TabIndex = 13;
+            this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -195,7 +195,7 @@
             this.radioFemale.Location = new System.Drawing.Point(134, 121);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(76, 21);
-            this.radioFemale.TabIndex = 17;
+            this.radioFemale.TabIndex = 15;
             this.radioFemale.Tag = "";
             this.radioFemale.Text = "Zensko";
             this.radioFemale.UseVisualStyleBackColor = true;
@@ -206,7 +206,7 @@
             this.radioDead.Location = new System.Drawing.Point(57, 3);
             this.radioDead.Name = "radioDead";
             this.radioDead.Size = new System.Drawing.Size(89, 21);
-            this.radioDead.TabIndex = 19;
+            this.radioDead.TabIndex = 18;
             this.radioDead.Tag = "";
             this.radioDead.Text = "Preminuo";
             this.radioDead.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@
             this.radioLive.Location = new System.Drawing.Point(3, 3);
             this.radioLive.Name = "radioLive";
             this.radioLive.Size = new System.Drawing.Size(48, 21);
-            this.radioLive.TabIndex = 18;
+            this.radioLive.TabIndex = 17;
             this.radioLive.TabStop = true;
             this.radioLive.Tag = "";
             this.radioLive.Text = "Ziv";
@@ -239,9 +239,10 @@
             this.btnCancel.Location = new System.Drawing.Point(247, 504);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 41);
-            this.btnCancel.TabIndex = 21;
+            this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Odustani";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // layoutForDeath
             // 
@@ -268,7 +269,7 @@
             this.dateTimeForDeath.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimeForDeath.Name = "dateTimeForDeath";
             this.dateTimeForDeath.Size = new System.Drawing.Size(204, 22);
-            this.dateTimeForDeath.TabIndex = 13;
+            this.dateTimeForDeath.TabIndex = 19;
             // 
             // addFamilyMember
             // 
@@ -295,7 +296,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "addFamilyMember";
-            this.Text = "addFamilyMember";
+            this.Text = "Dodaj clana porodice";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.layoutForDeath.ResumeLayout(false);
