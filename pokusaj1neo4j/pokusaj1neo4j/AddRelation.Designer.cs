@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRelation));
             this.btnBrother = new System.Windows.Forms.Button();
             this.btnFather = new System.Windows.Forms.Button();
             this.btnMother = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
             // 
             // btnBrother
             // 
-            this.btnBrother.Location = new System.Drawing.Point(44, 154);
+            this.btnBrother.Location = new System.Drawing.Point(87, 160);
             this.btnBrother.Name = "btnBrother";
             this.btnBrother.Size = new System.Drawing.Size(121, 55);
             this.btnBrother.TabIndex = 0;
@@ -49,7 +50,7 @@
             // 
             // btnFather
             // 
-            this.btnFather.Location = new System.Drawing.Point(44, 267);
+            this.btnFather.Location = new System.Drawing.Point(87, 273);
             this.btnFather.Name = "btnFather";
             this.btnFather.Size = new System.Drawing.Size(121, 55);
             this.btnFather.TabIndex = 2;
@@ -59,7 +60,7 @@
             // 
             // btnMother
             // 
-            this.btnMother.Location = new System.Drawing.Point(235, 267);
+            this.btnMother.Location = new System.Drawing.Point(278, 273);
             this.btnMother.Name = "btnMother";
             this.btnMother.Size = new System.Drawing.Size(121, 55);
             this.btnMother.TabIndex = 3;
@@ -69,7 +70,7 @@
             // 
             // btnSon
             // 
-            this.btnSon.Location = new System.Drawing.Point(44, 375);
+            this.btnSon.Location = new System.Drawing.Point(87, 381);
             this.btnSon.Name = "btnSon";
             this.btnSon.Size = new System.Drawing.Size(121, 55);
             this.btnSon.TabIndex = 4;
@@ -79,7 +80,7 @@
             // 
             // btnDauther
             // 
-            this.btnDauther.Location = new System.Drawing.Point(235, 375);
+            this.btnDauther.Location = new System.Drawing.Point(278, 381);
             this.btnDauther.Name = "btnDauther";
             this.btnDauther.Size = new System.Drawing.Size(121, 55);
             this.btnDauther.TabIndex = 5;
@@ -89,7 +90,7 @@
             // 
             // btnSpouse
             // 
-            this.btnSpouse.Location = new System.Drawing.Point(44, 47);
+            this.btnSpouse.Location = new System.Drawing.Point(87, 53);
             this.btnSpouse.Name = "btnSpouse";
             this.btnSpouse.Size = new System.Drawing.Size(312, 55);
             this.btnSpouse.TabIndex = 6;
@@ -99,7 +100,7 @@
             // 
             // btnSister
             // 
-            this.btnSister.Location = new System.Drawing.Point(235, 154);
+            this.btnSister.Location = new System.Drawing.Point(278, 160);
             this.btnSister.Name = "btnSister";
             this.btnSister.Size = new System.Drawing.Size(121, 55);
             this.btnSister.TabIndex = 7;
@@ -111,7 +112,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 474);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(481, 501);
             this.Controls.Add(this.btnSister);
             this.Controls.Add(this.btnSpouse);
             this.Controls.Add(this.btnDauther);
@@ -119,7 +122,9 @@
             this.Controls.Add(this.btnMother);
             this.Controls.Add(this.btnFather);
             this.Controls.Add(this.btnBrother);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddRelation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj srodstvo";
             this.Load += new System.EventHandler(this.AddRelation_Load);
             this.ResumeLayout(false);

@@ -101,5 +101,10 @@ namespace pokusaj1neo4j
             }
             else MessageBox.Show("Nije tacan username");
         }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+            //panel1.BackColor = Color.FromArgb(10, 10, 10);
+        }
     }
 }

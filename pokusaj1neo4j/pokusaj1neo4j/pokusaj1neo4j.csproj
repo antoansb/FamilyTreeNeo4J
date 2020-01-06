@@ -75,11 +75,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoForm.cs">
+    <Compile Include="InfoFormForFamily.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InfoForm.Designer.cs">
-      <DependentUpon>InfoForm.cs</DependentUpon>
+    <Compile Include="InfoFormForFamily.Designer.cs">
+      <DependentUpon>InfoFormForFamily.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -98,8 +98,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InfoForm.resx">
-      <DependentUpon>InfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="InfoFormForFamily.resx">
+      <DependentUpon>InfoFormForFamily.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

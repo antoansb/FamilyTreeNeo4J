@@ -168,9 +168,23 @@ namespace pokusaj1neo4j
 
         private void btnShowFamily_Click(object sender, EventArgs e)
         {
-            InfoForm information = new InfoForm(globalMember, globalFamily);
+            /*
+            InfoFormForFamily information = new InfoFormForFamily(globalMember, globalFamily);
             information.client = client;
+            information.ShowDialog();*/
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH(ee: Family) - [r: FAMILIJA] - > (aa: familyMember) WHERE ee.familyName = '" + globalFamily.familyName + "' RETURN aa",
+                 queryDict, CypherResultMode.Set);
+            List<familyMember> novi = ((IRawGraphClient)client).ExecuteGetCypherResults<familyMember>(query1).ToList();
+            
+            InfoFormForFamily information = new InfoFormForFamily(globalMember, globalFamily, novi);
+            information.client = this.client;
             information.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
