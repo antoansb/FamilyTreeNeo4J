@@ -34,7 +34,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewMember = new System.Windows.Forms.Button();
             this.lblFamily = new System.Windows.Forms.Label();
             this.btnRelate = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnShowList = new System.Windows.Forms.Button();
             this.btnShowFamily = new System.Windows.Forms.Button();
+            this.btnAddInformation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDodaj
@@ -68,6 +68,7 @@
             this.txtSurname.Size = new System.Drawing.Size(171, 30);
             this.txtSurname.TabIndex = 2;
             this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurnameChanged);
             // 
             // txtName
             // 
@@ -79,6 +80,7 @@
             this.txtName.TabIndex = 1;
             this.txtName.Tag = "";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.TextChanged += new System.EventHandler(this.txtNameChanged);
             // 
             // label1
             // 
@@ -87,9 +89,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 18);
+            this.label1.Size = new System.Drawing.Size(405, 18);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Unesite prezime osobe kojoj dodajete rodjaka:";
+            this.label1.Text = "Prezime osobe kojoj zelite da promenite informacije:";
             // 
             // label2
             // 
@@ -98,20 +100,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(22, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 18);
+            this.label2.Size = new System.Drawing.Size(370, 18);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Unesite ime osobe kojoj dodajete rodjaka:";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.btnSearch.Location = new System.Drawing.Point(660, 134);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(171, 82);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "POTRAZI";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.label2.Text = "Ime osobe kojoj zelite da promenite informacije:";
             // 
             // btnNewMember
             // 
@@ -214,7 +205,7 @@
             this.btnShowList.Name = "btnShowList";
             this.btnShowList.Size = new System.Drawing.Size(171, 82);
             this.btnShowList.TabIndex = 14;
-            this.btnShowList.Text = "VIDI INFORMACIJE";
+            this.btnShowList.Text = "PROMENI / VIDI INFORMACIJE";
             this.btnShowList.UseVisualStyleBackColor = false;
             this.btnShowList.Click += new System.EventHandler(this.btnShowList_Click);
             // 
@@ -230,6 +221,18 @@
             this.btnShowFamily.UseVisualStyleBackColor = false;
             this.btnShowFamily.Click += new System.EventHandler(this.btnShowFamily_Click);
             // 
+            // btnAddInformation
+            // 
+            this.btnAddInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnAddInformation.Enabled = false;
+            this.btnAddInformation.Location = new System.Drawing.Point(660, 134);
+            this.btnAddInformation.Name = "btnAddInformation";
+            this.btnAddInformation.Size = new System.Drawing.Size(171, 82);
+            this.btnAddInformation.TabIndex = 16;
+            this.btnAddInformation.Text = "DODAJ FIRMU, LJUBIMCE..";
+            this.btnAddInformation.UseVisualStyleBackColor = false;
+            this.btnAddInformation.Click += new System.EventHandler(this.btnAddInformation_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -237,6 +240,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(863, 468);
+            this.Controls.Add(this.btnAddInformation);
             this.Controls.Add(this.btnShowFamily);
             this.Controls.Add(this.btnShowList);
             this.Controls.Add(this.btnDelete);
@@ -247,7 +251,6 @@
             this.Controls.Add(this.btnRelate);
             this.Controls.Add(this.lblFamily);
             this.Controls.Add(this.btnNewMember);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
@@ -271,7 +274,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewMember;
         private System.Windows.Forms.Label lblFamily;
         private System.Windows.Forms.Button btnRelate;
@@ -282,6 +284,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnShowList;
         private System.Windows.Forms.Button btnShowFamily;
+        private System.Windows.Forms.Button btnAddInformation;
     }
 }
 

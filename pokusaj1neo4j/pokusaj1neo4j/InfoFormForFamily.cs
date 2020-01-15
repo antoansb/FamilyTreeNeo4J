@@ -26,31 +26,35 @@ namespace pokusaj1neo4j
             globalFamily = glFamily;
             familyMembers = AllMembers;
             lbl.Text = "Svi clanovi porodice "+globalFamily.familyName+".";
-            int i = 42;
-            foreach (familyMember f in familyMembers)
+            popuniInicijalno();
+            foreach(familyMember f in familyMembers)
             {
-                Label lblDynamic = new Label();
-                this.Controls.Add(lblDynamic);
-                lblDynamic.BackColor = Color.DarkOrange;
-                lblDynamic.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                lblDynamic.Location = new System.Drawing.Point(6,i);
-                lblDynamic.Name = "lblDynamic";
-                lblDynamic.Size = new System.Drawing.Size(507, 25);
-                lblDynamic.TabIndex = 0;
-                lblDynamic.Text = "Ime i prezime: " + f.name + " " + f.surname + " , pol: ";
+                String pol;
                 if (f.gender == "Male")
-                {
-                    lblDynamic.Text += "Musko, ";
-                }
-                else lblDynamic.Text += "Zensko, ";
-                lblDynamic.Text += "E - adresa: " + f.eAddress + ".";
-                if (f.live!="Alive")
-                {
-                    lblDynamic.BackColor = System.Drawing.SystemColors.Desktop;
-                    lblDynamic.ForeColor = Color.DarkOrange;
-                }
-                i += 42;
+                    pol = "Musko";
+                else pol = "Zensko";
+                add(f.name, f.surname, f.eAddress, pol, f.birthPlace, f.biography);
             }
         }
+
+        public void popuniInicijalno()
+        {
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
+            listView1.Columns.Add("Ime", 100);
+            listView1.Columns.Add("Prezime", 100);
+            listView1.Columns.Add("E-adresa", 100);
+            listView1.Columns.Add("pol", 95);
+            listView1.Columns.Add("Mesto rodjenja", 110);
+            listView1.Columns.Add("Biografija", 100);
+        }
+
+        public void add(string name, string surname, string eaddress, string gender, string placeOfBirth, string bio)
+        {
+            String[] row = { name, surname, eaddress, gender, placeOfBirth, bio };
+            ListViewItem item = new ListViewItem(row);
+            listView1.Items.Add(item);
+        }
+
     }
 }

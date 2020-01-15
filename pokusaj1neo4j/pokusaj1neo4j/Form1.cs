@@ -68,38 +68,6 @@ namespace pokusaj1neo4j
             relation.ShowDialog();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            Dictionary<string, object> queryDict = new Dictionary<string, object>();
-            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH (n: familyMember)-[:FAMILIJA]-(f:Family) where n.name = '" + txtName.Text + "' AND n.surname = '" + txtSurname.Text + "' AND f.familyName='"+globalFamily.familyName+"' return n",
-                 queryDict, CypherResultMode.Set);
-            List<familyMember> novi = ((IRawGraphClient)client).ExecuteGetCypherResults<familyMember>(query1).ToList();
-            foreach( familyMember f in novi )
-            {
-                globalMember = f;
-                MessageBox.Show(globalMember.name);
-                
-            }
-            if (globalMember == null)
-            {
-                MessageBox.Show("Osoba nije pronadjena!");
-            }
-            else
-            {
-                #region visible
-                btnDodaj.Enabled = true;
-                lblOtherName.Visible = true;
-                lblotherSurname.Visible = true;
-                txtOtherPersonName.Visible = true;
-                txtOtherPersonSurname.Visible = true;
-                btnRelate.Enabled = true;
-                btnDelete.Enabled = true;
-                btnShowList.Enabled = true;
-                btnShowFamily.Enabled = true;
-                #endregion
-            }
-        }
-
         private void btnNewMember_Click(object sender, EventArgs e)
         {
             addFamilyMember newMember = new addFamilyMember(null, null, globalFamily);
@@ -131,6 +99,9 @@ namespace pokusaj1neo4j
             txtOtherPersonName.Visible = false;
             txtOtherPersonSurname.Visible = false;
             btnRelate.Enabled = false;
+            if (novi != null)
+                MessageBox.Show("Spojili ste trenutnu osobu sa osobom po imenu " + txtOtherPersonName.Text);
+            else MessageBox.Show("Nije pronadjena osoba sa imenom "+txtOtherPersonName.Text);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -144,6 +115,7 @@ namespace pokusaj1neo4j
             txtName.Text = "";
             txtSurname.Text = "";
             #region visible
+            btnAddInformation.Enabled = false;
             btnDodaj.Enabled = false;
             lblOtherName.Visible = false;
             lblotherSurname.Visible = false;
@@ -168,10 +140,6 @@ namespace pokusaj1neo4j
 
         private void btnShowFamily_Click(object sender, EventArgs e)
         {
-            /*
-            InfoFormForFamily information = new InfoFormForFamily(globalMember, globalFamily);
-            information.client = client;
-            information.ShowDialog();*/
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH(ee: Family) - [r: FAMILIJA] - > (aa: familyMember) WHERE ee.familyName = '" + globalFamily.familyName + "' RETURN aa",
                  queryDict, CypherResultMode.Set);
@@ -185,6 +153,68 @@ namespace pokusaj1neo4j
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSurnameChanged(object sender, EventArgs e)
+        {
+            this.onTxtChange();
+        }
+
+        private void txtNameChanged(object sender, EventArgs e)
+        {
+            this.onTxtChange();
+        }
+
+        public void onTxtChange()
+        {
+            globalMember = null;
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH (n: familyMember)-[:FAMILIJA]-(f:Family) where n.name = '" + txtName.Text + "' AND n.surname = '" + txtSurname.Text + "' AND f.familyName='" + globalFamily.familyName + "' return n",
+                 queryDict, CypherResultMode.Set);
+            List<familyMember> novi = ((IRawGraphClient)client).ExecuteGetCypherResults<familyMember>(query1).ToList();
+            foreach (familyMember f in novi)
+            {
+                globalMember = f;
+                MessageBox.Show("Pronadjen je "+globalMember.name);
+
+            }
+            if (globalMember == null)
+            {
+                #region visible
+                btnAddInformation.Enabled = false;
+                btnDodaj.Enabled = false;
+                lblOtherName.Visible = false;
+                lblotherSurname.Visible = false;
+                txtOtherPersonName.Visible = false;
+                txtOtherPersonSurname.Visible = false;
+                btnRelate.Enabled = false;
+                btnDelete.Enabled = false;
+                btnShowList.Enabled = false;
+                btnShowFamily.Enabled = false;
+                #endregion
+            }
+            else
+            {
+                #region visible
+                btnAddInformation.Enabled = true;
+                btnDodaj.Enabled = true;
+                lblOtherName.Visible = true;
+                lblotherSurname.Visible = true;
+                txtOtherPersonName.Visible = true;
+                txtOtherPersonSurname.Visible = true;
+                btnRelate.Enabled = true;
+                btnDelete.Enabled = true;
+                btnShowList.Enabled = true;
+                btnShowFamily.Enabled = true;
+                #endregion
+            }
+        }
+
+        private void btnAddInformation_Click(object sender, EventArgs e)
+        {
+            AddInformation novo = new AddInformation(globalMember, globalFamily);
+            novo.client = client;
+            novo.ShowDialog();
         }
     }
 }

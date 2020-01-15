@@ -75,7 +75,7 @@ namespace pokusaj1neo4j
                 queryDict.Add("name", member.name);
                 queryDict.Add("surname", member.surname);
                 queryDict.Add("birthday", member.birthday);
-                queryDict.Add("birthplace", member.birthPlace);
+                queryDict.Add("birthPlace", member.birthPlace);
                 queryDict.Add("yearOfDeath", member.yearOfDeath);
                 queryDict.Add("eAddress", member.eAddress);
                 queryDict.Add("gender", member.gender);
@@ -83,7 +83,7 @@ namespace pokusaj1neo4j
                 queryDict.Add("biography", member.biography);
 
                 var query = new Neo4jClient.Cypher.CypherQuery("CREATE (n:familyMember {id:'" + member.id + "', name:'" + member.name
-                                                                + "',surname:'" + member.surname + "', birthday:'" + member.birthday + "', birthplace:'" + member.birthPlace
+                                                                + "',surname:'" + member.surname + "', birthday:'" + member.birthday + "', birthPlace:'" + member.birthPlace
                                                                 + "',yearOfDeath:'" + member.yearOfDeath + "',eAddress:'" + member.eAddress
                                                                 + "',gender:'" + member.gender + "', live:'" + member.live + "', biography:'" + member.biography
                                                                 + "'}) return n",
@@ -101,7 +101,7 @@ namespace pokusaj1neo4j
 
                 foreach (familyMember a in fMembers)
                 {
-                    MessageBox.Show(a.name);
+                    MessageBox.Show("Dodat je novi clan "+a.name+" "+a.surname+".");
                 }
 
                 if (this.globalRelative != null)
@@ -247,7 +247,7 @@ namespace pokusaj1neo4j
                 familyMember memberForChange = this.createMember();
                 Dictionary<string, object> queryDict = new Dictionary<string, object>();
                 var query16 = new Neo4jClient.Cypher.CypherQuery("MATCH (n { name: '"+globalMember.name+"', surname: '"+globalMember.surname+ "' }) SET n = {id:'" + memberForChange.id + "', name:'" + memberForChange.name
-                                                                + "',surname:'" + memberForChange.surname + "', birthday:'" + memberForChange.birthday + "', birthplace:'" + memberForChange.birthPlace
+                                                                + "',surname:'" + memberForChange.surname + "', birthday:'" + memberForChange.birthday + "', birthPlace:'" + memberForChange.birthPlace
                                                                 + "',yearOfDeath:'" + memberForChange.yearOfDeath + "',eAddress:'" + memberForChange.eAddress
                                                                 + "',gender:'" + memberForChange.gender + "', live:'" + memberForChange.live + "', biography:'" + memberForChange.biography
                                                                 + "'} RETURN n",

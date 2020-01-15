@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoFormForFamily));
             this.lbl = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // lbl
@@ -44,13 +45,23 @@
             this.lbl.Text = "label1";
             this.lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // listView1
+            // 
+            this.listView1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("listView1.BackgroundImage")));
+            this.listView1.BackgroundImageTiled = true;
+            this.listView1.Location = new System.Drawing.Point(12, 45);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(815, 503);
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // InfoFormForFamily
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(810, 613);
+            this.ClientSize = new System.Drawing.Size(902, 595);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.lbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InfoFormForFamily";
@@ -63,5 +74,6 @@
 
         #endregion
         private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.ListView listView1;
     }
 }

@@ -37,3 +37,5 @@ C:\Users\_miskee\Desktop\Neo4j\FamilyTreeNeo4J\pokusaj1neo4j\pokusaj1neo4j\obj\D
 C:\Users\_miskee\Desktop\Neo4j\FamilyTreeNeo4J\pokusaj1neo4j\pokusaj1neo4j\obj\Debug\pokusaj1neo4j.Form1.resources
 C:\Users\_miskee\Desktop\Neo4j\FamilyTreeNeo4J\pokusaj1neo4j\pokusaj1neo4j\obj\Debug\pokusaj1neo4j.LogIn.resources
 C:\Users\_miskee\Desktop\Neo4j\FamilyTreeNeo4J\pokusaj1neo4j\pokusaj1neo4j\obj\Debug\pokusaj1neo4j.InfoFormForFamily.resources
+C:\Users\_miskee\Desktop\Neo4j\FamilyTreeNeo4J\pokusaj1neo4j\pokusaj1neo4j\obj\Debug\pokusaj1neo4j.AddInformation.resources
+C:\Users\_miskee\Desktop\Neo4j\FamilyTreeNeo4J\pokusaj1neo4j\pokusaj1neo4j\obj\Debug\pokusaj1neo4j.InfoFormForFamilyMember.resources
